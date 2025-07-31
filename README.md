@@ -1,0 +1,1 @@
+# nvim-highlight-error-repo
