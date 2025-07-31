@@ -74,7 +74,7 @@ This error occurs inside the Treesitter decoration provider when `nvim_buf_set_e
 
 ## 🛠️ Fix Snippet
 
-To prevent the error, clamp `end_row` and `end_col` to valid values before calling `nvim_buf_set_extmark()`:
+This patch prevents the error by clamping `end_row` and `end_col` to safe values.
 
 ```lua
 -- Clamp end_row and end_col to valid values
@@ -92,11 +92,14 @@ if end_col > max_col then
 end
 ```
 
-📝 This snippet was tested by placing it before the call to `set_extmark()` in:
+💡 **Insert this snippet before the call to `nvim_buf_set_extmark()` inside the block that begins**:
 
-```bash
-nvim-linux-x86_64/share/nvim/runtime/lua/vim/treesitter/highlighter.lua
+```lua
+if hl and end_row >= line and not on_conceal and (not on_spell or spell ~= nil) then
 ```
+
+This block is located around line **370** in
+`nvim-linux-x86_64/share/nvim/runtime/lua/vim/treesitter/highlighter.lua` in Neovim v0.11.3.
 
 
 ## 📌 Notes
