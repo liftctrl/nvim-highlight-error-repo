@@ -41,7 +41,7 @@ This error occurs inside the Treesitter decoration provider when `nvim_buf_set_e
    
    ```bash
    git clone https://github.com/liftctrl/nvim-highlight-error-repo.git
-   cp -r cp -r nvim-highlight-error-repo/nvim ~/.config/
+   cp -r nvim-highlight-error-repo/nvim ~/.config/
    ```
 
 4. **Launch Neovim with the test file**:
