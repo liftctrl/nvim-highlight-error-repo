@@ -92,10 +92,10 @@ if end_col > max_col then
 end
 ```
 
-📝 This snippet was tested by placing it before the call to set_extmark() in:
+📝 This snippet was tested by placing it before the call to `set_extmark()` in:
 
 ```bash
-/usr/share/nvim/runtime/lua/vim/treesitter/highlighter.lua
+nvim-linux-x86_64/share/nvim/runtime/lua/vim/treesitter/highlighter.lua
 ```
 
 
