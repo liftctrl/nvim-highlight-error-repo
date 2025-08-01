@@ -84,7 +84,7 @@ if end_row >= total_lines then
   end_row = total_lines - 1
 end
 
-local line_text = vim.api.nvim_buf_get_lines(buf, end_row, end_row + 1, true)[1] or ""
+local line_text = vim.api.nvim_buf_get_lines(buf, end_row, end_row + 1, true)[1] or ''
 local max_col = #line_text
 
 if end_col > max_col then
